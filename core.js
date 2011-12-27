@@ -45,16 +45,15 @@ var DSL = Role.extend({
 exports.DSL = DSL
 
 var Target = Role.extend({
-  run: function run() {
+  via: 'last',
+  run: function run(task) {
+    if (!task) return this.actor
     var actor = this.actor
-    var params = Array.prototype.slice.call(arguments)
-    var task = params.shift()
-    params.unshift(actor)
-    var value = task.apply(actor, params)
-    // If return value is `actor` (`this` pseudo-variable in the function
-    // scope), then return `this` role currently taken by an actor to allow
-    // chaining.
-    return value === actor ? this : value
+    var params = Array.prototype.slice.call(arguments, 1)
+    if (this.via === 'first') params.unshift(actor)
+    if (this.via === 'last') params.push(actor)
+    this.actor = task.apply(actor, params)
+    return this
   }
 })
 exports.Target = Target
