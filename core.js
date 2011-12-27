@@ -59,22 +59,21 @@ var Target = Role.extend({
 })
 exports.Target = Target
 
-function fab(actor) {
-  var tasks = []
-  return function dsl(task) {
-    if (task === fab.run) return fab.run(tasks, value)
-    tasks.push(Array.prototype.slice.call(arguments))
+function fab(value) {
+  function dsl(task) {
+    if (task === fab.run) return dsl.value
+    var params = Array.prototype.slice.call(arguments)
+    var fn = params.shift()
+    params.push(value)
+    dsl.value = fn.apply(this, params)
     return dsl
   }
+  dsl.value = value
+  return dsl
 }
-fab.new = function(actor) { return fab(actor) }
-fab.run = function run(tasks, value) {
-  if (!task.length)
-  var params = tasks.shift()
-  var fn = params.shift()
-  params.push(value)
-  return run(fn.apply(null, params))
-}
+fab.new = function(value) { return fab(value) }
+fab.run = function run() {}
+exports.fab = fab
 
 function use(actor) {
   return Role.new(actor)
