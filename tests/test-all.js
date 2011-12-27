@@ -20,21 +20,21 @@ function descriptor(source) {
   return value
 }
 
-var Hash = DSL.extend({
-  merge: function merge(properties) {
-    return Object.defineProperties(this, descriptor(properties))
-  },
-  filter: function filter() {
-    var properties = descriptor(this)
-    var whitelist = {}
-    Array.prototype.slice.call(arguments).forEach(function(name) {
-      whitelist[name] = properties[name]
-    })
-    return Object.create(Object.getPrototypeOf(this), whitelist)
-  }
-})
-
 exports['test smoke'] = function(assert) {
+  var Hash = DSL.extend({
+    merge: function merge(properties) {
+      return Object.defineProperties(this, descriptor(properties))
+    },
+    filter: function filter() {
+      var properties = descriptor(this)
+      var whitelist = {}
+      Array.prototype.slice.call(arguments).forEach(function(name) {
+        whitelist[name] = properties[name]
+      })
+      return Object.create(Object.getPrototypeOf(this), whitelist)
+    }
+  })
+
   var f1 = {
     a: 1,
     b: 2,
