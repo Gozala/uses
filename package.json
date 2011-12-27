@@ -1,0 +1,33 @@
+{
+  "name": "use-as",
+  "id": "use-as",
+  "version": "0.0.1",
+  "description": "DSL to use your values as you wish.",
+  "keywords": [ "use-as" ],
+  "author": "Irakli Gozalishvili <rfobic@gmail.com> (http://jeditoolkit.com)",
+  "homepage": "https://github.com/Gozala/use-as",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gozala/use-as.git",
+    "web": "https://github.com/Gozala/use-as"
+  },
+  "bugs": {
+    "url": "http://github.com/Gozala/use-as/issues/"
+  },
+  "dependencies": {
+    "selfish": ">=0.3.0"
+  },
+  "devDependencies": {
+    "test": ">=0.0.10"
+  },
+  "engines": {
+    "node": ">=0.4.x"
+  },
+  "scripts": {
+    "test": "node tests/test-all.js"
+  },
+  "licenses": [{
+    "type" : "MIT",
+    "url" : "http://jeditoolkit.com/LICENSE"
+  }]
+}
