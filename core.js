@@ -8,18 +8,41 @@
 'use strict';
 
 var Base = require('selfish').Base
+var slice = Function.prototype.call.bind(Array.prototype.slice)
+
 var Role = Base.extend({
-  new: function (actor) {
-    var role = Object.create(this, {
-      actor: { value: actor }
-    })
-    role.initialize.apply(role, arguments)
+  initialize: function initialize(actor) {
+    this.actor = actor
   },
   as: function as(role) {
     return role.new(this.actor)
   }
 })
 exports.Role = Role
+
+var DSL = Role.extend({
+  via: 'this',
+  extend: function extend(methods) {
+    var descriptor = {}
+    Object.getOwnPropertyNames(methods).forEach(function(name) {
+      if (typeof(methods[name]) !== 'function')
+        descriptor[name] = methods[name]
+      else
+        descriptor[name] = { value:  function method() {
+          var params = slice(arguments)
+          if (this.via === 'first') params.unshift(this.actor)
+          if (this.via === 'last') params.push(this.actor)
+          this.actor = methods[name].apply(this.actor, params)
+          return name === 'run' ? this.actor : this
+        }, enumerable: true }
+    }, this)
+    return Object.create(this, descriptor)
+  },
+  run: function run() {
+    return this.actor
+  }
+})
+exports.DSL = DSL
 
 var Target = Role.extend({
   run: function run() {
