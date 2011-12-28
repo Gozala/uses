@@ -15,13 +15,13 @@
     "url": "http://github.com/Gozala/uses/issues/"
   },
   "dependencies": {
-    "selfish": ">=0.3.0"
+    "selfish": ">=0.3.2"
   },
   "devDependencies": {
     "test": ">=0.0.10"
   },
   "engines": {
-    "node": ">=0.4.x"
+    "node": ">=0.4.0"
   },
   "scripts": {
     "test": "node tests/test-all.js"
