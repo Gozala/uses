@@ -28,9 +28,9 @@ This library tryes to provide a natural, chainable API that is not limited to
 any collection of heldful methods, in fact it does not comes with thouse and
 encourages to build / reuse use case specific methods and collections.
 
-## Example
+## Examples
 
-### Generic DSLs
+### Any funcitons with generic DSL
 
 ```js
 var uses = require('uses'), use = uses.use, Target = uses.Target
@@ -66,7 +66,7 @@ var actual = use({ a: 1, b: 2, c: 3, d: 4 }).as(Target).
   // => { x: 12, a: 1, b: 2 }
 ```
 
-### Custom DSLs
+### Define custom DSL
 
 ```js
 var uses = require('uses'), use = uses.use, DSL = uses.DSL
@@ -93,7 +93,7 @@ var hash = use({ a: 1, b: 2, c: 3, d: 4 }).as(Hash).
   // => { x: 12, a: 1, b: 2 }
 ```
 
-### Or go crazy with [fab] inspired DSLs
+### Go crazy with [fab] inspired DSL
 
 ```js
 
