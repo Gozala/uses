@@ -7,8 +7,8 @@
 
 "use strict";
 
-var usage = require('../core')
-var use = usage.use, DSL = usage.DSL, fab = usage.fab, Target = usage.Target
+var uses = require('../core')
+var use = uses.use, DSL = uses.DSL, fab = uses.fab, Target = uses.Target
 
 function descriptor(source) {
   var value = {}

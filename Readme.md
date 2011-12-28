@@ -1,13 +1,13 @@
-# use-as #
+# uses #
 
-[![Build Status](https://secure.travis-ci.org/Gozala/use-as.png)](http://travis-ci.org/Gozala/use-as)
+[![Build Status](https://secure.travis-ci.org/Gozala/uses.png)](http://travis-ci.org/Gozala/uses)
 
 DSL to use your values as you wish.
 
 ## Install ##
 
-    npm install use-as
+    npm install uses
 
 ## Require ##
 
-    var use-as = require('https!raw.github.com/Gozala/use-as/v0.0.1/use-as.js')
+    var uses = require('https!raw.github.com/Gozala/uses/v0.0.1/uses.js')

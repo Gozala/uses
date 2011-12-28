@@ -1,18 +1,18 @@
 {
-  "name": "use-as",
-  "id": "use-as",
+  "name": "uses",
+  "id": "uses",
   "version": "0.0.1",
   "description": "DSL to use your values as you wish.",
-  "keywords": [ "use-as" ],
+  "keywords": [ "uses" ],
   "author": "Irakli Gozalishvili <rfobic@gmail.com> (http://jeditoolkit.com)",
-  "homepage": "https://github.com/Gozala/use-as",
+  "homepage": "https://github.com/Gozala/uses",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Gozala/use-as.git",
-    "web": "https://github.com/Gozala/use-as"
+    "url": "https://github.com/Gozala/uses.git",
+    "web": "https://github.com/Gozala/uses"
   },
   "bugs": {
-    "url": "http://github.com/Gozala/use-as/issues/"
+    "url": "http://github.com/Gozala/uses/issues/"
   },
   "dependencies": {
     "selfish": ">=0.3.0"
