@@ -24,13 +24,13 @@ var sum = _.reduce(_.map(_.filter(numbers, function(n) {
 }, 0)
 ```
 
-This library tryes to provide a natural, chainable API that is not limited to
+This library tries to provide a natural, chainable API that is not limited to
 any collection of heldful methods, in fact it does not comes with thouse and
 encourages to build / reuse use case specific methods and collections.
 
 ## Examples
 
-### Any funcitons with generic DSL
+### Any functions with generic DSL
 
 ```js
 var uses = require('uses'), use = uses.use, Target = uses.Target
